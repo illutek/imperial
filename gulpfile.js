@@ -1,8 +1,12 @@
 /**
- * Created by stefan on 29.08.17.
+ * Created by stefan on 12.09.17.
  * gulp-clean is replaced by gulp-rimraf
  * http://learningwithjb.com/posts/cleaning-our-build-folder-with-gulp
  */
+
+/* jshint node: true */
+"use strict";
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
@@ -10,6 +14,7 @@ var clean = require('gulp-rimraf');
 var sourcemaps = require('gulp-sourcemaps');
 var imagemin = require('gulp-imagemin');
 var uglify = require('gulp-uglify');
+var del = require('del');
 //var browserSync = require('browser-sync').create();
 
 // //////////////////////////////////////////////
@@ -93,9 +98,19 @@ gulp.task('clean:drupalfiles', function () {
 });
 
 // Clean the JS folder
+// gulp.task('clean:jsfiles', function () {
+//     return gulp.src('dist/js', {read: false})
+//         .pipe(clean());
+// });
+
 gulp.task('clean:jsfiles', function () {
-    return gulp.src('dist/js', {read: false})
-        .pipe(clean());
+    return del([
+        // 'dist/report.csv',
+        // here we use a globbing pattern to match everything inside the `mobile` folder
+        'dist/js/**/*',
+        // we don't want to clean this file though so we negate the pattern
+        // '!dist/mobile/deploy.json'
+    ]);
 });
 
 
@@ -113,9 +128,14 @@ gulp.task('clean:imagefiles', function () {
 
 // Clean the Bower folder
 gulp.task('clean:bower', function () {
-    return gulp.src('dist/bower', {read: false})
+    return gulp.src('dist/bower_components', {read: false})
         .pipe(clean());
 });
+
+// gulp.task('clean', function(cb) {
+//     // You can use multiple globbing patterns as you would with `gulp.src`
+//     del(['build'], cb);
+// });
 
 // Clean the whole dist folder
 gulp.task('clean', function () {
@@ -129,7 +149,7 @@ gulp.task('clean', function () {
 gulp.task('watch', function () {
     gulp.watch('src/sass/**/*.{scss,sass}', ['sass']);
     gulp.watch('src/images/*', ['imageMin']);
-    gulp.watch('src/js/*.js', ['minify']);
+    gulp.watch('src/js/**/*.js', ['minify']);
     gulp.watch('src/templates/**/*.twig', ['copyTwig']);
     gulp.watch('src/**/*.html', ['copyHTML']);
     gulp.watch(['src/**/*.yml', 'src/**/*.theme'], ['copyDrupal']);

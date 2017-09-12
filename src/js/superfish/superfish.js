@@ -7,6 +7,8 @@
  *	http://www.gnu.org/licenses/gpl.html
  */
 
+/*globals $:false */
+
 ;(function ($, w) {
 	"use strict";
 
