@@ -1,0 +1,22 @@
+{
+  "name": "theme-directory",
+  "description": "Base directory for theming",
+  "main": "index.js",
+  "authors": [
+    "Stefaan Vandenborne <stefanvandenborne@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "bootstrap": "^3.3.7",
+    "animate.css": "^3.5.2"
+  }
+}

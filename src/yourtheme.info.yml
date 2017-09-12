@@ -1,0 +1,10 @@
+name: yourtheme
+type: theme
+description: ''
+base theme: classy
+package: Custom
+core: 8.x
+version: 1.0.0
+libraries:
+  - yourtheme/globalstyle
+  - yourtheme/globaljs
