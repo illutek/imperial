@@ -6,5 +6,5 @@ package: Custom
 core: 8.x
 version: 1.0.0
 libraries:
-  - yourtheme/globalstyle
-  - yourtheme/globaljs
+  - imperial/globalstyle
+  - imperial/globaljs

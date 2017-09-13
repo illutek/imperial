@@ -49,7 +49,7 @@ gulp.task('copyTwig', ['clean:twigfiles'], function(){
 });
 
 // //////////////////////////////////////////////
-gulp.task('copyHTML', ['clean:twigfiles'], function(){
+gulp.task('copyHTML', ['clean:htmlfiles'], function(){
     gulp.src('src/**/*.html')
         .pipe(gulp.dest('dist/'));
 });
@@ -104,19 +104,19 @@ gulp.task('clean:drupalfiles', function () {
 // });
 
 gulp.task('clean:jsfiles', function () {
-    return del([
-        // 'dist/report.csv',
-        // here we use a globbing pattern to match everything inside the `mobile` folder
-        'dist/js/**/*',
-        // we don't want to clean this file though so we negate the pattern
-        // '!dist/mobile/deploy.json'
-    ]);
+    return del(['dist/js/**/*']);
 });
 
 
 // Clean the templates folder
 gulp.task('clean:twigfiles', function () {
     return gulp.src('dist/templates', {read: false})
+        .pipe(clean());
+});
+
+// Clean the html files
+gulp.task('clean:htmlfiles', function () {
+    return gulp.src('dist/**/*.html', {read: false})
         .pipe(clean());
 });
 
@@ -148,7 +148,7 @@ gulp.task('clean', function () {
 // ///////////////////////////////////////////////////
 gulp.task('watch', function () {
     gulp.watch('src/sass/**/*.{scss,sass}', ['sass']);
-    gulp.watch('src/images/*', ['imageMin']);
+    gulp.watch('src/images/**/*', ['imageMin']);
     gulp.watch('src/js/**/*.js', ['minify']);
     gulp.watch('src/templates/**/*.twig', ['copyTwig']);
     gulp.watch('src/**/*.html', ['copyHTML']);
