@@ -21,7 +21,7 @@ var del = require('del');
 // Sass to css and copy to /dist
 // /////////////////////////////////////////////
 gulp.task('sass', function () {
-    return gulp.src('src/styles.scss')
+    return gulp.src('src/sass/styles.scss')
         .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass({outputStyle: 'compressed'}).on('error',sass.logError))
