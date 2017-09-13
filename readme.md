@@ -12,4 +12,12 @@ Na clone van het project in de hoofdroot met cmd ```yarn install ``` alle dev de
    
    Terug in de hoofdroot met cmd ```yarn start``` of ```gulp``` wordt de gulpfile.js uitgevoerd deze creëert een dist 
    folder met alle file nodig voor de theme.
+   
+   ### Gulp
+   gulp-sass = van scss naar css en comprimeren  
+   gulp-uglify = js files comprimeren  
+   gulp-imagemin = images comprimeren  
+   gulp-sourcemaps = om een sourcemap toe te voegen aan het styles.css  
+   gulp-rimraf = om de dist folder op te ruimen
+   
 
