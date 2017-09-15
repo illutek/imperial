@@ -21,36 +21,45 @@ var del = require('del');
 // Sass to css and copy to /dist
 // /////////////////////////////////////////////
 gulp.task('sass', function () {
-    return gulp.src('src/sass/styles.scss')
+    return gulp.src('sass/styles.scss')
         .pipe(sourcemaps.init())
         .pipe(plumber())
         .pipe(sass({outputStyle: 'compressed'}).on('error',sass.logError))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('dist/css'))
-        .pipe(gulp.dest('src/css'));
+        .pipe(gulp.dest('css'));
 });
 
 
 // ////////////////////////////////////////////
 // Copy Drupal files to /dist
 // ///////////////////////////////////////////
-gulp.task('copyDrupal', ['clean:drupalfiles'], function(){
-    gulp.src(['src/**/*.yml', 'src/**/*.theme'])
-        .pipe(gulp.dest('dist/'));
-});
+// gulp.task('copyDrupal', ['clean:drupalfiles'], function(){
+//     gulp.src(['*.yml', '*.theme'])
+//         .pipe(gulp.dest('dist/'));
+// });
 
 
 // ////////////////////////////////////////////
 // Copy twig files to dist/templates
 // ///////////////////////////////////////////
 gulp.task('copyTwig', ['clean:twigfiles'], function(){
-    gulp.src('src/templates/**/*.twig')
+    gulp.src('templates/**/*.twig')
         .pipe(gulp.dest('dist/templates'));
 });
 
 // //////////////////////////////////////////////
-gulp.task('copyHTML', ['clean:htmlfiles'], function(){
-    gulp.src('src/**/*.html')
+// TODO .png .html .yml .theme in dezelfde task onderbrengen
+// //////////////////////////////////////////////////////////
+var filesToMove = [
+    './*.yml',
+    './*.theme',
+    './readme.md',
+    './*html',
+    './*.png'
+];
+gulp.task('copySeparateFiles', ['clean:separateFiles'], function(){
+    gulp.src(filesToMove, {base: './'})
         .pipe(gulp.dest('dist/'));
 });
 
@@ -59,7 +68,7 @@ gulp.task('copyHTML', ['clean:htmlfiles'], function(){
 // Minify JS and copy JS files to dist/js
 // ///////////////////////////////////////////
 gulp.task('minify', ['clean:jsfiles'], function() {
-    gulp.src('src/js/**/*.js')
+    gulp.src('js/**/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 });
@@ -69,7 +78,7 @@ gulp.task('minify', ['clean:jsfiles'], function() {
 // gulp.task('imageMin', () => = nieuwe syntax
 // /////////////////////////////////////////////
 gulp.task('imageMin', ['clean:imagefiles'], function(){
-    gulp.src('src/images/*')
+    gulp.src('images/*')
         .pipe(imagemin([
             imagemin.gifsicle({interlaced: true}),
             imagemin.jpegtran({progressive: true}),
@@ -84,7 +93,7 @@ gulp.task('imageMin', ['clean:imagefiles'], function(){
 // ///////////////////////////////////////////////////
 
 gulp.task('copyBower', ['clean:bower'], function () {
-    gulp.src('src/bower_components/**/*.*')
+    gulp.src('bower_components/**/*.*')
         .pipe(gulp.dest('dist/bower_components'));
 });
 
@@ -92,16 +101,11 @@ gulp.task('copyBower', ['clean:bower'], function () {
 // Clean up dist folder
 // //////////////////////////////////////////////////
 // Clean the related Drupal files
-gulp.task('clean:drupalfiles', function () {
-    return gulp.src(['dist/**/*.yml', 'dist/**/*.theme'], {read: false})
-        .pipe(clean());
-});
-
-// Clean the JS folder
-// gulp.task('clean:jsfiles', function () {
-//     return gulp.src('dist/js', {read: false})
+// gulp.task('clean:drupalfiles', function () {
+//     return gulp.src(['dist/**/*.yml', 'dist/**/*.theme'], {read: false})
 //         .pipe(clean());
 // });
+
 
 gulp.task('clean:jsfiles', function () {
     return del(['dist/js/**/*']);
@@ -114,9 +118,11 @@ gulp.task('clean:twigfiles', function () {
         .pipe(clean());
 });
 
-// Clean the html files
-gulp.task('clean:htmlfiles', function () {
-    return gulp.src('dist/**/*.html', {read: false})
+// Clean the SeparateFiles
+
+
+gulp.task('clean:separateFiles', function () {
+    return gulp.src(['dist/**/*.yml', 'dist/**/*.theme', 'dist/*.html'], {read: false})
         .pipe(clean());
 });
 
@@ -133,7 +139,7 @@ gulp.task('clean:bower', function () {
 });
 
 // gulp.task('clean', function(cb) {
-//     // You can use multiple globbing patterns as you would with `gulp.src`
+//     // You can use multiple globbing patterns as you would with `gulp.src-notused`
 //     del(['build'], cb);
 // });
 
@@ -147,15 +153,14 @@ gulp.task('clean', function () {
 // Watch Task
 // ///////////////////////////////////////////////////
 gulp.task('watch', function () {
-    gulp.watch('src/sass/**/*.{scss,sass}', ['sass']);
-    gulp.watch('src/images/**/*', ['imageMin']);
-    gulp.watch('src/js/**/*.js', ['minify']);
-    gulp.watch('src/templates/**/*.twig', ['copyTwig']);
-    gulp.watch('src/**/*.html', ['copyHTML']);
-    gulp.watch(['src/**/*.yml', 'src/**/*.theme'], ['copyDrupal']);
+    gulp.watch('sass/**/*.{scss,sass}', ['sass']);
+    gulp.watch('images/**/*', ['imageMin']);
+    gulp.watch('js/**/*.js', ['minify']);
+    gulp.watch('templates/**/*.twig', ['copyTwig']);
+    gulp.watch(['*.html', '*.yml', '*.theme'], ['copySeparateFiles']);
 });
 
 // ///////////////////////////////////////////////////
 // Default Task
 // ///////////////////////////////////////////////////
-gulp.task('default', ['sass', 'copyTwig', 'copyHTML', 'minify', 'copyDrupal', 'copyBower', 'imageMin', 'watch']);
+gulp.task('default', ['sass', 'copyTwig', 'copySeparateFiles', 'minify', 'copyBower', 'imageMin', 'watch']);

@@ -1,6 +1,11 @@
 # Imperial theme
 Een html free theme herwerken to Drupal theme https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
 
+## Component base structure
+Lijkt er op dat het theme met src en dist folder stucture toch niet zo simpel is of nog niet klaar 
+http://www.mediacurrent.com/blog/rethinking-theme-structure-drupal-8.  
+Ga voor dit project de src folder laten vallen en deze naar de hoofdroot brengen, ga dit toch verder onderzoeken.
+
 ## Tools
 Yarn als componenten manager voor de dev dependencies (gulp).  
 Bower als componenten manager voor site dependencies (bootstrap, font-awesome and animate.css)

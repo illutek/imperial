@@ -1,6 +1,6 @@
-name: yourtheme
+name: imperial
 type: theme
-description: ''
+description: 'CVO project voor een coaching site'
 base theme: classy
 package: Custom
 core: 8.x
