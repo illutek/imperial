@@ -32,15 +32,6 @@ gulp.task('sass', function () {
 
 
 // ////////////////////////////////////////////
-// Copy Drupal files to /dist
-// ///////////////////////////////////////////
-// gulp.task('copyDrupal', ['clean:drupalfiles'], function(){
-//     gulp.src(['*.yml', '*.theme'])
-//         .pipe(gulp.dest('dist/'));
-// });
-
-
-// ////////////////////////////////////////////
 // Copy twig files to dist/templates
 // ///////////////////////////////////////////
 gulp.task('copyTwig', ['clean:twigfiles'], function(){
@@ -49,7 +40,7 @@ gulp.task('copyTwig', ['clean:twigfiles'], function(){
 });
 
 // //////////////////////////////////////////////
-// TODO .png .html .yml .theme in dezelfde task onderbrengen
+// Copy files to root
 // //////////////////////////////////////////////////////////
 var filesToMove = [
     './*.yml',
@@ -100,12 +91,6 @@ gulp.task('copyBower', ['clean:bower'], function () {
 // ///////////////////////////////////////////////////
 // Clean up dist folder
 // //////////////////////////////////////////////////
-// Clean the related Drupal files
-// gulp.task('clean:drupalfiles', function () {
-//     return gulp.src(['dist/**/*.yml', 'dist/**/*.theme'], {read: false})
-//         .pipe(clean());
-// });
-
 
 gulp.task('clean:jsfiles', function () {
     return del(['dist/js/**/*']);
@@ -119,10 +104,13 @@ gulp.task('clean:twigfiles', function () {
 });
 
 // Clean the SeparateFiles
-
-
+var rootFiles = [
+    'dist/**/*.yml',
+    'dist/**/*.theme',
+    'dist/*.html'
+];
 gulp.task('clean:separateFiles', function () {
-    return gulp.src(['dist/**/*.yml', 'dist/**/*.theme', 'dist/*.html'], {read: false})
+    return gulp.src(rootFiles, {read: false})
         .pipe(clean());
 });
 
