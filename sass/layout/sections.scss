@@ -55,8 +55,8 @@
 
 }
 
-/* Services Section
---------------------------------*/
+/* Services Section = About Section
+--------------------------------------*/
 #services {
   background: linear-gradient(rgba(255, 255 ,255 , .7), rgba(255, 255 ,255 , .7)), url("../images/cofee.jpeg") fixed center center;
   background-size: cover;
@@ -116,8 +116,8 @@
   padding:  100px 0;
 }
 
-/* Portfolio Section
---------------------------------*/
+/* Portfolio Section = Testimonies section
+--------------------------------------------*/
 #portfolio {
   background: #fff;
   padding: 80px 0;
@@ -249,5 +249,12 @@
 
     }
 
+  }
+}
+
+#content {
+  .content-wrap {
+    padding: 50px 0;
+    min-height: 30vw;
   }
 }

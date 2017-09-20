@@ -1,4 +1,5 @@
-jQuery(document).ready(function( $ ) {
+(function ($) {
+    $(document).ready(function () {
 
   // Preloader
   $(window).on('load', function() {
@@ -16,10 +17,10 @@ jQuery(document).ready(function( $ ) {
   new WOW().init();
   
   // Initiate superfish on nav menu
-  $('.nav-menu').superfish({
-    animation: {opacity:'show'},
-    speed: 400
-  });
+  // $('.nav-menu').superfish({
+  //   animation: {opacity:'show'},
+  //   speed: 400
+  // });
   
   // Mobile Navigation
   if( $('#nav-menu-container').length ) {
@@ -108,3 +109,4 @@ jQuery(document).ready(function( $ ) {
   });
 
 });
+})(jQuery);
