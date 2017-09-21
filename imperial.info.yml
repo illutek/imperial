@@ -13,6 +13,7 @@ libraries:
   - imperial/globaljs
 
 regions:
+  content:  Content
   coaching: Coaching
   about:    About
   testimonies: Testimonies
