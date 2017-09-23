@@ -1,3 +1,5 @@
+{{ attach_library('imperial/easing') }}
+
 <div id="preloader"></div>
   
 <!--==========================
@@ -30,9 +32,15 @@
         <!-- Uncomment below if you prefer to use a text image -->
         <!--<h1><a href="#hero">Header 1</a></h1>-->
       </div>
-
-      {% include directory ~ '/templates/partials/nav.inc.html.twig' %}
-
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="#hero">Home</a></li>
+          <li><a href="#about">Coaching &amp; Advies</a></li>
+          <li><a href="#services">Wie ben ik</a></li>
+          <li><a href="#portfolio">Getuigenissen</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
     
