@@ -16,10 +16,6 @@ sticky:
   js:
     js/stickyjs/sticky.js: {}
 
-easing:
-  js:
-    js/easing/easing.min.js: {}
-
 morphext:
   js:
     js/morphext/morphext.min.js: {}
@@ -27,3 +23,9 @@ morphext:
 globaljs:
   js:
     js/custom.js: {}
+
+# Used only on page--front.html.twig with
+# {{ attach_library('imperial/easing') }}
+easing:
+  js:
+    js/easing/easing.min.js: {}
