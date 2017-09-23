@@ -7,12 +7,6 @@ bootstrap:
   version: 1.x
   js:
     bower_components/bootstrap/dist/js/bootstrap.min.js: {}
-  dependencies:
-    - core/jquery
-    - core/drupal.ajax
-    - core/drupal
-    - core/drupalSettings
-    - core/jquery.once
 
 wow:
   js:
@@ -33,9 +27,3 @@ morphext:
 globaljs:
   js:
     js/custom.js: {}
-  dependencies:
-      - core/jquery
-      - core/drupal.ajax
-      - core/drupal
-      - core/drupalSettings
-      - core/jquery.once
