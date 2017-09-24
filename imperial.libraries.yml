@@ -4,7 +4,7 @@ globalstyle:
       css/styles.css: {}
 
 bootstrap:
-  version: 3.x
+  version: 3.3.7
   js:
     bower_components/bootstrap/dist/js/bootstrap.min.js: {}
 
