@@ -11,6 +11,7 @@ libraries:
   - imperial/wow
   - imperial/sticky
   - imperial/globaljs
+  - imperial/easing
 
 regions:
   content:  Content

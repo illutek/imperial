@@ -26,8 +26,6 @@ globaljs:
   dependencies:
     - core/jquery
 
-# Used only on page--front.html.twig with
-# {{ attach_library('imperial/easing') }}
 easing:
   js:
     js/easing/easing.min.js: {}
