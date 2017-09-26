@@ -1,0 +1,42 @@
+{#
+ Created by PhpStorm.
+ User: stefan
+ Date: 26.09.17
+ Time: 13:09
+ #}
+
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {% if not page %}
+    <h3{{ title_attributes.addClass('section-title') }}>
+      {{ label }}
+    </h3>
+  {% endif %}
+  {{ title_suffix }}
+
+  <div class="section-title-divider"></div>
+
+  {#class node__teaser added for margin top and bottom#}
+{%
+set customClasses = [
+  'node__content',
+  'node__teaser'
+]
+%}
+  <div{{ content_attributes.addClass(customClasses) }}>
+    {{ content }}
+  </div>
+
+</article>

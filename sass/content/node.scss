@@ -1,0 +1,20 @@
+// /////////////////////////
+// @@ NODE
+// ////////////////////////
+
+// teaser node used in node--teaser.html.twig
+
+.node__teaser {
+  margin: 50px 0;
+}
+
+.node__links {
+  margin-top: 30px;
+  ul {
+    &.inline {
+      li {
+        padding: 0;
+      }
+    }
+  }
+}

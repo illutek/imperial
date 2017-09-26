@@ -51,8 +51,6 @@
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="section-title">Coaching &amp; Advies</h3>
-          <div class="section-title-divider"></div>
           {{ page.coaching }}
         </div>
       </div>
@@ -66,8 +64,6 @@
     <div class="container wow fadeInUp">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="section-title">Wie ben ik</h3>
-          <div class="section-title-divider"></div>
           {{ page.about }}
         </div>
       </div>
@@ -148,7 +144,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="copyright">
-              &copy; Copyright <strong>footer</strong>. All Rights Reserved
+              Copyright {{ "now"|date("Y") }} {{ page.footer }}
             </div>
             <div class="credits">
              <p>Design door Vandenborne Stefaan</p>
