@@ -11,7 +11,7 @@
 }
 
 .link-icon {
-  &:before {
+  &::before {
     @extend .icon;
     content: "\f06e";
   }

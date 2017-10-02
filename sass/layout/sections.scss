@@ -183,6 +183,7 @@
   
   .info {
     color: $heading-color;
+    margin-top: 20px;
     
     i {
       font-size: 32px;
@@ -234,9 +235,15 @@
     input, textarea {
       border-radius: 0;
       box-shadow: none;
+      padding-left: 5px;
 
     }
-    
+    .webform-button--submit {
+      background: $accent-color;
+      padding: 5px 10px;
+      border: none;
+      color: white;
+    }
     button[type="submit"] {
       background: $accent-color;
       border: 0;
