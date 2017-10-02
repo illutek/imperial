@@ -2,9 +2,9 @@
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #111;
+  background: $footer-bg;
   padding: 30px 0;
-  color: #fff;
+  color: set-color-text($footer-bg);
   
   .copyright {
     text-align: center;
@@ -14,8 +14,6 @@
     padding-top: 10px;
     text-align: center;
     font-size: 13px;
-    color: #ccc;
-
+    color: set-color-text($footer-bg);
   }
-
 }
