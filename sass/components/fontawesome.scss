@@ -1,0 +1,20 @@
+// //////////////////////////////
+// @@ FONTAWESOME ICONS
+// /////////////////////////////
+// http://fontawesome.io/cheatsheet/
+
+.icon {
+  font-family: FontAwesome;
+  display: inline-block;
+  padding-right: 10px;
+  color: $accent-color;
+}
+
+.link-icon {
+  &:before {
+    @extend .icon;
+    content: "\f06e";
+  }
+}
+
+
