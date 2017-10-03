@@ -1,5 +1,5 @@
+{{ attach_library('imperial/stickyImage') }}
 <div id="preloader"></div>
-
 
 <!--==========================
   Header Section
@@ -29,15 +29,18 @@
 <!--==========================
   Content Section
 ============================-->
+<div id="sticky-anchor"></div>
 <section id="content">
   <div class="container">
     <div class="row">
       <div class="col-md-5">
-        <div class="aboutme-image affix">
-          <img src="{{ base_path ~ directory }}/images/dame4.jpg" alt="Aboutme Picture"/>
+        <div class="sticky">
+          <div class="aboutme-image">
+            <img src="{{ base_path ~ directory }}/images/dame4.jpg" alt="Aboutme Picture"/>
+          </div>
         </div>
       </div>
-      
+
       <div class="col-md-7 content-wrap">
         {{ title_prefix }}
         {% if title %}
@@ -62,8 +65,8 @@
 
         {{ page.content }}
       </div>{# /.layout-content #}
-      </div>
     </div>
+  </div>
   </div>
 </section>
 

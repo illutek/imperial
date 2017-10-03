@@ -3,7 +3,41 @@
 // The aboutme Page
 // ////////////////////////
 
-.aboutme-image {
-  margin: 10vh 0;
+.sticky {
+  position: absolute;
+  z-index: 999;
+  animation-name: stick_move_up;
+  animation-duration: 1.2s;
+  animation-fill-mode: backwards;
+  &.stick {
+    position: fixed;
+    animation-name: stick_move_down;
+    animation-duration: 1.2s;
+    animation-fill-mode: forwards;
+  }
 }
+
+
+@keyframes stick_move_up {
+  from {
+    top: 120px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes stick_move_down {
+  from {
+    top: 0;
+  }
+  100% {
+    top: 120px;
+  }
+}
+
+.aboutme-image {
+  margin: 50px 0;
+}
+
+
 

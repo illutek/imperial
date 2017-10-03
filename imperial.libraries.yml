@@ -20,6 +20,12 @@ morphext:
   js:
     js/morphext/morphext.min.js: {}
 
+stickyImage:
+  js:
+    js/stickyImage.js: {}
+  dependencies:
+    - core/jquery
+
 globaljs:
   js:
     js/custom.js: {}
