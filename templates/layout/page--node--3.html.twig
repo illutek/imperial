@@ -33,39 +33,30 @@
 <section id="content">
   <div class="container">
     <div class="row">
-      
-      <div class="col-md-5">
-        <div class="sticky">
-          <div class="aboutme-image">
-            <img src="{{ base_path ~ directory }}/images/dame4.jpg" alt="Aboutme Picture"/>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-md-7 content-wrap">
-        {{ title_prefix }}
-        {% if title %}
-          <h1 class="title" id="page-title">
-            {{ title }}
-          </h1>
-        {% endif %}
-        {{ title_suffix }}
+      {{ title_prefix }}
+      {% if title %}
+        <h1 class="title" id="page-title">
+          {{ title }}
+        </h1>
+      {% endif %}
+      {{ title_suffix }}
 
-        {% if tabs %}
-          <nav class="tabs" role="navigation">
-            {{ tabs }}
-          </nav>
-        {% endif %}
+      {% if tabs %}
+        <nav class="tabs" role="navigation">
+          {{ tabs }}
+        </nav>
+      {% endif %}
 
-        {{ page.help }}
-        {% if action_links %}
-          <ul class="action-links">
-            {{ action_links }}
-          </ul>
-        {% endif %}
+      {{ page.help }}
+      {% if action_links %}
+        <ul class="action-links">
+          {{ action_links }}
+        </ul>
+      {% endif %}
 
-        {{ page.content }}
-      </div>{# /.layout-content #}
+      {{ page.content }}
+
     </div>
   </div>
 </section>
