@@ -23,8 +23,6 @@ morphext:
 stickyImage:
   js:
     js/stickyImage.js: {}
-  dependencies:
-    - core/jquery
 
 globaljs:
   js:
