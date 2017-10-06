@@ -3,20 +3,38 @@
 // The aboutme Page
 // ////////////////////////
 
+// page--node--3.html.twig
+
+.node-full-wrap {
+  margin-top: 50px;
+  @include mQuery(1080px) {
+    margin-top: 20px;
+    padding: 0 20px;
+  }
+}
+
+// node--3--full.html.twig
 .sticky {
   position: absolute;
-  z-index: 999;
+  @include mQuery(1080px) {
+    position: relative;
+    animation-name: none;
+  }
   animation-name: stick_move_up;
   animation-duration: 1.2s;
   animation-fill-mode: backwards;
+
   &.stick {
     position: fixed;
     animation-name: stick_move_down;
     animation-duration: 1.2s;
     animation-fill-mode: forwards;
+    @include mQuery(1080px) {
+      position: relative;
+      animation-name: none;
+    }
   }
 }
-
 
 @keyframes stick_move_up {
   from {
@@ -26,6 +44,7 @@
     top: 0;
   }
 }
+
 @keyframes stick_move_down {
   from {
     top: 0;
@@ -36,9 +55,21 @@
 }
 
 .aboutme-image {
-  margin: 50px 0;
-  width: 100%;
-  height: auto;
+  img {
+    @include mQuery(1080px) {
+      margin: 10px 0;
+    }
+    margin: 50px 0;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.content-wrap {
+  padding-left: 50px;
+  @include mQuery(1080px) {
+    padding-left: 0;
+  }
 }
 
 

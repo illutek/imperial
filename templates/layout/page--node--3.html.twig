@@ -33,30 +33,30 @@
 <section id="content">
   <div class="container">
     <div class="row">
+      <div class="node-full-wrap">
+        {{ title_prefix }}
+        {% if title %}
+          <h1 class="title" id="page-title">
+            {{ title }}
+          </h1>
+        {% endif %}
+        {{ title_suffix }}
 
-      {{ title_prefix }}
-      {% if title %}
-        <h1 class="title" id="page-title">
-          {{ title }}
-        </h1>
-      {% endif %}
-      {{ title_suffix }}
+        {% if tabs %}
+          <nav class="tabs" role="navigation">
+            {{ tabs }}
+          </nav>
+        {% endif %}
 
-      {% if tabs %}
-        <nav class="tabs" role="navigation">
-          {{ tabs }}
-        </nav>
-      {% endif %}
+        {{ page.help }}
+        {% if action_links %}
+          <ul class="action-links">
+            {{ action_links }}
+          </ul>
+        {% endif %}
 
-      {{ page.help }}
-      {% if action_links %}
-        <ul class="action-links">
-          {{ action_links }}
-        </ul>
-      {% endif %}
-
-      {{ page.content }}
-
+        {{ page.content }}
+      </div>
     </div>
   </div>
 </section>
