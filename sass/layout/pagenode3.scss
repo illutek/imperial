@@ -4,6 +4,7 @@
 // ////////////////////////
 
 // page--node--3.html.twig
+// ///////////////////////////
 
 .node-full-wrap {
   margin-top: 50px;
@@ -14,6 +15,8 @@
 }
 
 // node--3--full.html.twig
+// ////////////////////////////
+
 .sticky {
   position: absolute;
   @include mQuery(1080px) {
