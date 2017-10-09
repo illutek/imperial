@@ -7,7 +7,7 @@
   });
 
   // Hero rotating texts
-  $("#hero .rotating").Morphext({
+  $(".video-hero .rotating").Morphext({
     animation: "flipInX",
     separator: ",",
     speed: 3000

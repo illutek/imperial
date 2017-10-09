@@ -1,31 +1,40 @@
 /*--------------------------------------------------------------
 # Welcome
 --------------------------------------------------------------*/
-#hero {
-  display: table;
-  width: 100%;
+.video-hero {
+  display: flex;
+  align-items: center;
   height: 100vh;
-  background: url(../images/route.jpeg) top center fixed;
-  background-size: cover;
-  
-  .hero-logo {
-    
-    margin: 20px;
-    img {
-      max-width: 100%;
+  overflow-x: hidden;
+  .full-screen-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    video {
+      min-height: 100%;
+      min-width: 100%;
     }
-
   }
-
-  .hero-container {
-    background: rgba(0,0,0,0.50);
-    display: table-cell;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    vertical-align: middle;
+  .video-overlay {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
   }
-  
+}
+
+.call-to-action-container {
+  z-index: 2;
+  text-align: center;
+  .hero-logo {
+    margin: 20px;
+  }
   h1 {
     margin: 30px 0 10px 0;
     font-weight: 700;
@@ -37,11 +46,11 @@
     }
 
   }
-  
+
   h2 {
-    color: #999; 
+    color: #999;
     margin-bottom: 50px;
-    
+
     @media (max-width: 768px) {
       font-size: 24px;
       line-height: 26px;
@@ -49,54 +58,51 @@
       .rotating {
         display: block;
       }
-
     }
   }
+}
 
-  .rotating > .animated {
+.rotating > .animated {
+  display: inline-block;
+}
+
+.bleu {
+  color: $accent-color;
+}
+
+.actions {
+
+  a {
+    font-family: $heading-font;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
     display: inline-block;
+    padding: 8px 20px;
+    border-radius: 2px;
+    transition: 0.5s;
+    margin: 10px;
   }
 
-  .bleu {
-    color: $accent-color;
-  }
+}
 
-  
-  .actions {
-    
-    a {
-      font-family: $heading-font;
-      text-transform: uppercase;
-      font-weight: 500;
-      font-size: 16px;
-      letter-spacing: 1px;
-      display: inline-block;
-      padding: 8px 20px;
-      border-radius: 2px;
-      transition: 0.5s;
-      margin: 10px;
-    }
-
-  }
-
-  .btn-get-started {
-    background: $accent-color;
-    border: 2px solid $accent-color;
-    color: #fff;
-    &:hover {
-      background: none;
-      border: 2px solid #fff;
-      color: #fff;
-    }
-  }
-  
-  .btn-services {
+.btn-get-started {
+  background: $accent-color;
+  border: 2px solid $accent-color;
+  color: #fff;
+  &:hover {
+    background: none;
     border: 2px solid #fff;
     color: #fff;
-    &:hover {
-      background: $accent-color;
-      border: 2px solid $accent-color;
-    }
   }
-   
+}
+
+.btn-services {
+  border: 2px solid #fff;
+  color: #fff;
+  &:hover {
+    background: $accent-color;
+    border: 2px solid $accent-color;
+  }
 }
