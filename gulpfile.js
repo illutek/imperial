@@ -115,6 +115,7 @@ gulp.task('style:dist', function () {
         }))
         .pipe(cssmin())
         .pipe(sourcemaps.write())
+        .pipe(gulp.dest('css'))
         .pipe(gulp.dest(path.dist.css));
 });
 
