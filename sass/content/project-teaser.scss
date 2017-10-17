@@ -1,0 +1,16 @@
+// /////////////////////////
+// @@ PROJECT TEASER
+// ////////////////////////
+.project__view {
+  min-height: 200px;
+  min-width: 250px;
+}
+.project__tiles {
+  //float: left;
+  min-height: 200px;
+  min-width: 25%;
+  h3 {
+    font-size: 1.6rem;
+    line-height: 0.8rem;
+  }
+}
