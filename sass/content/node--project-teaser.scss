@@ -1,0 +1,24 @@
+// /////////////////////////
+// @@ PROJECT TEASER
+// ////////////////////////
+
+.project--page {
+  .view-content {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    .project__view {
+      min-height: 200px;
+      width: 250px;
+      .project__tiles {
+        //float: left;
+        min-height: 200px;
+        width: 250px;
+        h3 {
+          font-size: 1.6rem;
+          line-height: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
