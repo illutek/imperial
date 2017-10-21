@@ -70,7 +70,7 @@
  *   in different view modes.
  */
 #}
-<div class="project__tiles">
+
   {% set classes = [
   'node',
   'node--type-' ~ node.bundle|clean_class,
@@ -81,21 +81,20 @@
   ] %}
 
   {{ attach_library('classy/node') }}
-  <article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes) }}>
 
-    {{ title_prefix }}
-    {% if not page %}
-      <h3{{ title_attributes }}>
-        {{ label }}
-      </h3>
-    {% endif %}
-    {{ title_suffix }}
+  {{ title_prefix }}
+  {% if not page %}
+    <h3{{ title_attributes }}>
+      {{ label }}
+    </h3>
+  {% endif %}
+  {{ title_suffix }}
 
 
-    <div{{ content_attributes.addClass('node__content-project') }}>
-      {{ content.field_img_project[0] }}
-    </div>
+  <div{{ content_attributes.addClass('node__content-project') }}>
+    {{ content.field_img_project[0] }}
+  </div>
 
-  </article>
-</div>
+</article>
 

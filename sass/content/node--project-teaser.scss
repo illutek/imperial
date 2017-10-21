@@ -2,21 +2,23 @@
 // @@ PROJECT TEASER
 // ////////////////////////
 
+// the class project--page added to the view under advanced
+// this to only address this view-content
 .project--page {
   .view-content {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 30px;
     .project__view {
       min-height: 200px;
-      width: 250px;
-      .project__tiles {
-        //float: left;
-        min-height: 200px;
-        width: 250px;
-        h3 {
-          font-size: 1.6rem;
-          line-height: 0.8rem;
-        }
+      justify-self: center;
+      h3 {
+        font-size: 1.6rem;
+        line-height: 0.8rem;
+      }
+      img {
+        width: 100%;
+        height: auto;
       }
     }
   }

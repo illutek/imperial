@@ -81,25 +81,21 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
 
-  {{ title_prefix }}
-  {% if not page %}
-    <h2{{ title_attributes }}>
-      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-    </h2>
-  {% endif %}
-  {{ title_suffix }}
 
+  <h2{{ title_attributes }}>
+    {#{{ label }}#}
+  </h2>
 
-  <div{{ content_attributes.addClass('node__content') }}>
-    <div class="col-md-5">
-      <div class="sticky">
-        <div class="aboutme-image">
-          {{ content.field_about_img }}
-        </div>
-      </div>
-    </div>
-    <div class="col-md-7 content-wrap">
+{% set nodeClasses = [
+'node__content',
+'content__project',
+] %}
+  <div{{ content_attributes.addClass(nodeClasses) }}>
+    <div class="content__project-body">
       {{ content.body }}
+    </div>
+    <div class="content__project-images">
+      {{ content.field_img_project }}
     </div>
   </div>
 

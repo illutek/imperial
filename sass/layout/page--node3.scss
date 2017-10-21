@@ -6,13 +6,7 @@
 // page--node--3.html.twig
 // ///////////////////////////
 
-.node-full-wrap {
-  margin-top: 50px;
-  @include mQuery(1080px) {
-    margin-top: 20px;
-    padding: 0 20px;
-  }
-}
+.node-full-wrap {}
 
 // node--3--full.html.twig
 // ////////////////////////////
