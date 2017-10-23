@@ -30,8 +30,7 @@
   }
   animation-name: stick_move_up;
   animation-duration: 1.2s;
-  animation-fill-mode: backwards;
-
+  //animation-fill-mode: backwards;
   &.stick {
     position: fixed;
     animation-name: stick_move_down;
@@ -55,7 +54,7 @@
 
 @keyframes stick_move_down {
   from {
-    top: 0;
+    top: 130px;
   }
   100% {
     top: 120px;
