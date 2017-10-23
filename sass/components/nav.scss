@@ -62,11 +62,11 @@
   }
 }
 
-/* Nav Meu Container */
+/* Nav Menu Container */
 #nav-menu-container {
   float: right;
   margin: 5px 0;
-  @media (max-width: 768px) {
+  @include mQuery(1080px){
     display: none;
   }
 }
@@ -131,11 +131,10 @@
   i {
     color: #fff;
   }
-    
-  @media (max-width: 768px) {
-    display: inline; 
+
+  @include mQuery(1080px){
+    display: inline;
   }
-    
 }
 
 /* Mobile Nav Styling */

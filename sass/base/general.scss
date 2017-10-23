@@ -1,12 +1,13 @@
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
+// //////////////////////////
+// GENERAL
+// //////////////////////////
 body {
   background: #fff;
   color: $text-color;
   font-family: $text-font;
   font-size: $text-size;
   line-height: 2em;
+  overflow-x: hidden;
 }
 
 a {
