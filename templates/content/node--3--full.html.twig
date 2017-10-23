@@ -89,16 +89,21 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
   {% endif %}
   {{ title_suffix }}
 
+{% set nodeclasses = [
+'node__content',
+'node-aboutfull__wrap',
+] %}
 
-  <div{{ content_attributes.addClass('node__content') }}>
-    <div class="col-md-5">
+  <div{{ content_attributes.addClass(nodeclasses) }}>
+    <div class="about-img__wrapper">
       <div class="sticky">
         <div class="aboutme-image">
           {{ content.field_about_img }}
         </div>
       </div>
     </div>
-    <div class="col-md-7 content-wrap">
+
+    <div class="content__wrap">
       {{ content.body }}
     </div>
   </div>

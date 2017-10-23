@@ -11,32 +11,47 @@
 // node--3--full.html.twig
 // ////////////////////////////
 
-.aboutme-image {
-  img {
-    @include mQuery(1080px) {
-      margin: 10px 0;
+// css-grid instead of bootstrap col-...
+
+.node-aboutfull__wrap {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  //grid-template-rows: auto;
+  @include mQuery(768px){
+    grid-template-columns: 1fr;
+  }
+  .about-img__wrapper {
+    .aboutme-image {
+      img {
+        @include mQuery(768px) {
+          margin: 10px 0;
+        }
+        margin: 50px 0;
+        width: 100%;
+        height: auto;
+      }
     }
-    margin: 50px 0;
-    width: 100%;
-    height: auto;
   }
 }
 
+
+
 .sticky {
   position: absolute;
-  @include mQuery(1080px) {
+
+  @include mQuery(768px) {
     position: relative;
     animation-name: none;
   }
   animation-name: stick_move_up;
   animation-duration: 1.2s;
-  //animation-fill-mode: backwards;
+  animation-fill-mode: backwards;
   &.stick {
     position: fixed;
     animation-name: stick_move_down;
     animation-duration: 1.2s;
     animation-fill-mode: forwards;
-    @include mQuery(1080px) {
+    @include mQuery(768px) {
       position: relative;
       animation-name: none;
     }
@@ -54,16 +69,16 @@
 
 @keyframes stick_move_down {
   from {
-    top: 130px;
+    top: 0px;
   }
   100% {
     top: 120px;
   }
 }
 
-.content-wrap {
+.content__wrap {
   padding-left: 50px;
-  @include mQuery(1080px) {
+  @include mQuery(768px) {
     padding-left: 0;
   }
 }
